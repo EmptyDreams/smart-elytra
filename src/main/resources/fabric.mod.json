@@ -1,0 +1,48 @@
+{
+	"schemaVersion": 1,
+	"id": "smart-elytra",
+	"version": "${version}",
+	"name": "Smart Elytra",
+	"description": "This mod is designed to help players reduce accidental activation of the elytra.",
+	"authors": [
+		"kmar"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/smart-elytra/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			{
+				"value": "top.kmar.mc.se.SmartElytra",
+				"adapter": "kotlin"
+			}
+		],
+		"client": [
+			{
+				"value": "top.kmar.mc.se.SmartElytraClient",
+				"adapter": "kotlin"
+			}
+		]
+	},
+	"mixins": [
+		"smart-elytra.mixins.json",
+		{
+			"config": "smart-elytra.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.16.10",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*",
+		"fabric-language-kotlin": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
