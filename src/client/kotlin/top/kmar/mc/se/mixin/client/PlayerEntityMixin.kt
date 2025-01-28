@@ -56,7 +56,7 @@ class PlayerEntityMixin {
             callback.returnValue = false
             return
         }
-        println(world.time - jumpTimestamp)
+
         if (player.velocity.y.absoluteValue < 0.25 && world.time - jumpTimestamp < 20) {
             return
         }
